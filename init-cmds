@@ -1,0 +1,30 @@
+#set-up
+sudo su
+apt-get update
+apt-get install apt-transport-https
+
+
+-container-engine (docker)
+sudo su
+apt-get update
+apt-get install apt-transport-https
+
+
+-connect master to node
+sudo curl -s https://packages.cloud.google.com/apt... | sudo apt-key add 
+
+-create file 
+nano /etc/apt/sources.list.d/kubernetes.list
+
+-And this cmd in above file to download this package
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+
+-to install above pkg
+apt-get update
+
+
+apt-get install -y kubelet kubeadm kubectl kubernetes-cni
+
+-BOOTSTRAPPING THE MASTER NODE (IN MASTER)
+
+kubeadm init

@@ -1,0 +1,7 @@
+manifest  file --> .yaml
+
+objects
+
+object -> state of clusters
+
+k8s always check actaul state and desired state of object

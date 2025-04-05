@@ -9,6 +9,13 @@ k8s always check actaul state and desired state of object
 k8s obejcts:-
 1.Pod           2.Service
 3.Volume        4.Namespace
-5.replicasets   6.secrets
+5.Replicasets   6.Secrets
 7.Deployments  8.Jobs
 9.Demonset     10.ConfigMaps
+
+
+objects - json or yaml
+
+kubectl -- cmd tool
+
+*pod

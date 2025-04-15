@@ -1,0 +1,95 @@
+##note-02
+
+kubectl get nodes
+kubectl describe node minikube
+
+
+
+Annotations
+
+extra information
+
+kind: Pod                              
+apiVersion: v1                     
+metadata:                           
+  name: testpod         
+  annotations:
+    description: "वा! खूप छान आदेश! हा तुझा पहिला Pod आहे — अभिनंदन! 🎉         
+spec:                                    
+  containers:                      
+name: c00                     
+      image: ubuntu              
+      command: ["/bin/bash", "-c", "while true; do echo Hello-Bhupinder; sleep 5 ; done"]
+  restartPolicy: Never         # Defaults to Always
+
+
+---------------------------------
+
+
+kubectl apply -f pod1.yml
+o/p--> pod/testpod created	
+
+kubectl get pods
+kubectl get pods -o wide
+kubectl describe pod  testpod
+kubectl logs -f testpod
+kubectl logs -f testpod -c c00    (c00 -  container name)
+kubectl delete pod testpod
+
+
+
+-----------------------
+	
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod3
+spec:
+  containers:
+   -  name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Technical-Guftgu; sleep 5 ; done"]
+    - name: c01
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Hello-Bhupinder; sleep 5 ; done"]
+
+
+cmds for go inside container :-
+kubectl exec testpod3 -it -c c02 -- bin/bash
+ps
+exit
+
+----------------------------
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: environments
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/sh", "-c", "while true; do echo Hello-$MYNAME; sleep 5 ; done"]
+      env:                        # List of environment variables to be used inside the pod
+        - name: MYNAME
+          value: BHUPINDER
+
+
+-------------------------
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testpod4
+spec:
+  containers:
+    - name: c00
+      image: httpd
+      ports:
+        - containerPort: 80
+
+
+
+
+

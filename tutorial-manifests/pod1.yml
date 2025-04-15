@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod
+  annotations:
+    description: "वा! खूप छान आदेश! हा तुझा पहिला Pod आहे — अभिनंदन! 🎉"
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Adesh Malunjkar; sleep 5; done"]
+  restartPolicy: Never
+

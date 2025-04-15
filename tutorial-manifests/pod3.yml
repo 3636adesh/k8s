@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: environments
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/sh", "-c", "while true; do echo Hello-$MYNAME; sleep 5 ; done"]
+      env:                        # List of environment variables to be used inside the pod
+        - name: MYNAME
+          value: BHUPINDER
+

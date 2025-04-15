@@ -1,3 +1,5 @@
+##note-01
+
 manifest  file --> .yaml
 
 objects
@@ -16,6 +18,6 @@ k8s obejcts:-
 
 objects - json or yaml
 
-kubectl -- cmd tool
+kubectl --> cmd tool
 
 *pod
